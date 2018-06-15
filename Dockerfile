@@ -15,6 +15,7 @@ RUN mkdir /cache && cd /tmp \
   && curl -L -O -k "http://mirror.bit.edu.cn/apache/maven/maven-3/3.5.3/binaries/apache-maven-3.5.3-bin.tar.gz" \
   && echo "bbfa43a4ce4ef96732b896d057f8a613aa229801 apache-maven-3.5.3-bin.tar.gz" | sha1sum --check \
   && tar -zxf jdk-8u172-linux-x64.tar.gz && mv jdk1.8.0_172 /usr/local/jdk \
+  && tar -zxf apache-maven-3.5.3-bin.tar.gz && mv apache-maven-3.5.3 /usr/local/maven \
   && rm -f jdk-8u172-linux-x64.tar.gz apache-maven-3.5.3-bin.tar.gz
 
 COPY maven_settings.xml /usr/local/maven/conf/settings.xml
