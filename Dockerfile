@@ -16,9 +16,10 @@ RUN mkdir /cache && cd /tmp \
   && echo "bbfa43a4ce4ef96732b896d057f8a613aa229801 apache-maven-3.5.3-bin.tar.gz" | sha1sum --check \
   && rm -f jdk-8u172-linux-x64.tar.gz apache-maven-3.5.3-bin.tar.gz
 
+COPY maven_settings.xml /usr/local/maven/conf/settings.xml
+
 # set environment
 ENV LANG=zh_CN.UTF-8 \
   JAVA_HOME=/usr/local/jdk \
   MAVEN_HOME=/usr/local/maven \
   PATH=/usr/local/jdk/bin:/usr/local/maven/bin:$PATH
-
